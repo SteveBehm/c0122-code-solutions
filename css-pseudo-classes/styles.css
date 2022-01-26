@@ -9,17 +9,7 @@ table {
   border: 2px solid white;
 }
 
-thead th:nth-child(1) {
-  background-color: black;
-  color: white;
-}
-
-thead th:nth-child(2) {
-  background-color: black;
-  color: white;
-}
-
-thead th:nth-child(3) {
+thead th {
   background-color: black;
   color: white;
 }
