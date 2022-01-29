@@ -1,0 +1,60 @@
+.container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Karla, sans-serif;
+}
+
+.column-full {
+  text-align: center;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column-half {
+  width: 50%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.column-two-thirds {
+  width: calc(200% / 3);
+}
+
+.column-third {
+  width: calc(100% / 3);
+}
+
+.align-right {
+  text-align: right;
+}
+
+.head-para {
+  width: 75%;
+  margin: auto;
+}
+
+.learn-more {
+  border: 1.5px solid rgb(210 76 69);
+  background-color: white;
+  padding: 10px 40px;
+  color: rgb(210 76 69);
+  font-family: Karla, sans-serif;
+}
+
+h1 {
+  letter-spacing: 6px;
+}
+
+.text-gray {
+  line-height: 30px;
+  color: rgb(99 99 99);
+}
+
+.principle-pic {
+  height: 100px;
+}
