@@ -17,6 +17,9 @@
 
 .column-half {
   width: 50%;
+}
+
+.ptb {
   padding-top: 30px;
   padding-bottom: 30px;
 }
