@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Four Column Layout</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!--There will be two columns total-->
+    <div class="row column-full">
+      <h2 class="header-text">
+        How It Works
+      </h2>
+    </div>
+    <!--This will now be the second row with four columns within-->
+    <div class="row">
+      <!--Each column has 2 images, 1 header, and 1 paragraph-->
+      <div class="column-fourth">
+        <div class="screen-pic">
+          <img class="screen-shot" src="images/screen-1.png" alt="first screen on app">
+        </div>
+        <div class="icon-pic">
+          <img class="icon" src="images/switch-icon.png" alt="switch icon">
+        </div>
+        <h4 class="label-style">App Switching</h4>
+        <p class="para-style">Toggles all your apps on and off.</p>
+      </div>
+      <div class="column-fourth">
+        <div class="screen-pic">
+          <img class="screen-shot" src="images/screen-2.png" alt="second screen on app">
+        </div>
+        <div class="icon-pic">
+          <img class="icon" src="images/filter-icon.png" alt="filter icon">
+        </div>
+        <h4 class="label-style">Trip Filtering</h4>
+        <p class="para-style">Evaluates your trip requests.</p>
+      </div>
+      <div class="column-fourth">
+        <div class="screen-pic">
+          <img class="screen-shot" src="images/screen-3.png" alt="third screen on app">
+        </div>
+        <div class="icon-pic">
+          <img class="icon" src="images/slider-icon.png" alt="slider icon">
+        </div>
+        <h4 class="label-style">Service Filters</h4>
+        <p class="para-style">Accepts only your ideal trips.</p>
+      </div>
+      <div class="column-fourth">
+        <div class="screen-pic">
+          <img class="screen-shot" src="images/screen-4.png" alt="fourth screen on app">
+        </div>
+        <div class="icon-pic">
+          <img class="icon" src="images/bars-icon.png" alt="bars icon">
+        </div>
+        <h4 class="label-style">Stats + Mileage</h4>
+        <p class="para-style">Tracks your trips across all apps.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
