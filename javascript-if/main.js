@@ -8,50 +8,39 @@
             introduceWarnerBro
  */
 function isUnderFive(number) {
-  if (number < 5) {
-    return true;
-  }
+  return number < 5;
 }
 
 function isEven(number) {
-  if (number % 2 === 0) {
-    return true;
-  }
+  return number % 2 === 0;
+
 }
 
 function startsWithJ(string) {
-  if (string.charAt(0) === 'J') {
-    return true;
-  }
+  return string[0] === 'J';
 }
 
 function isOldEnoughToDrink(person) {
-  if (person.age < 21) {
-    return false;
-  }
+  return person.age < 21;
 }
 
 function isOldEnoughToDrive(person) {
-  if (person.age >= 16) {
-    return true;
-  }
+  return person.age >= 16;
 }
 
 function isOldEnoughToDrinkAndDrive(person) {
-  if (person.age >= 0) {
-    return false;
-  }
+  return person.age >= 0;
 }
 
 function categorizeAcidity(pH) {
-  if (pH > 7) {
+  if (pH > 7 && pH <= 14) {
     return 'base';
-  } else if (pH < 7) {
+  } else if (pH < 7 && pH >= 0) {
     return 'acid';
-  } else if (pH === 7) {
-    return 'neutral';
+  } else if (pH < 0 || pH > 14) {
+    return 'invalid pH level';
   } else {
-    return 'inavlid pH level';
+    return 'neutral';
   }
 }
 
