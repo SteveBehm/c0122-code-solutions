@@ -13,8 +13,6 @@ function toObject(keyValuePair) {
   var firstArr = keyValuePair.slice(0, 1);
   var secondArr = keyValuePair.slice(1);
   var obj = {};
-  for (var i = 0; i < firstArr.length; i++) {
-    obj[firstArr[i]] = secondArr[i];
-  }
+  obj[firstArr] = secondArr[0];
   return obj;
 }
