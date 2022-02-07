@@ -1,0 +1,83 @@
+.container {
+  width: 900px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.border-bottom {
+  border-bottom: 0.5px solid rgb(220 220 220);
+}
+
+.column-half {
+  width: 50%;
+}
+
+.white-logo {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.first-logo {
+  height: 18px;
+  width: auto;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.top-link {
+  font-family: Avenir, sans-serif;
+  color: rgb(111 111 111);
+  text-decoration: none;
+  font-size: 10px;
+}
+
+.contact-button {
+  font-family: Avenir, sans-serif;
+  font-size: 10px;
+  color: rgb(255 255 255);
+  background-color: rgb(41 68 99);
+  border-radius: 2px;
+  border: 0;
+  height: 30px;
+  width: 80px;
+}
+
+.hero-image {
+  width: 90%;
+  height: 400px;
+  margin: 60px auto;
+  background-image: linear-gradient(rgb(0 0 0 / 30%), rgb(0 0 0 / 30%)), url("images/product/product-header.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hero-text {
+  width: 60%;
+  color: rgb(255 255 255);
+  margin-left: 50px;
+}
+
+.hero-heading {
+  font-family: "Tiempos Headline", sans-serif;
+}
+
+.hero-para {
+  font-family: Avenir, sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  width: 80%;
+}
