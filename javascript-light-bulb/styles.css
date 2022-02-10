@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  margin: 25% auto;
+}
+
+body {
+  background-color: black;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  height: 250px;
+  width: 250px;
+  background-color: rgb(37 37 37);
+  border-radius: 50%;
+  border: none;
+}
+
+.circle.light-bulb-on {
+  background-color: rgb(250 233 132);
+  box-shadow: 0 0 40px rgb(250 233 132);
+}
+
+body.light-on {
+  background-color: rgb(254 249 241);
+}
