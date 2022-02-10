@@ -1,13 +1,15 @@
 var $bodyColor = document.querySelector('body');
 
+var $switch = true;
 function lightBulb(event) {
-  if ($circle.className === 'circle') {
+  if ($switch) {
     $circle.className = 'circle light-bulb-on';
-    $bodyColor.className = 'body light-on';
-  } else if ($circle.className === 'circle light-bulb-on') {
+    $bodyColor.className = 'light-on';
+  } else {
     $circle.className = 'circle';
     $bodyColor.className = '';
   }
+  $switch = !$switch;
 }
 
 var $circle = document.querySelector('.circle');
