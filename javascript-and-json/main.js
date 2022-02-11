@@ -18,9 +18,9 @@ var libraryArr = [
 console.log('my library of books:', libraryArr);
 console.log('type of library:', typeof libraryArr);
 
-JSON.stringify(libraryArr);
-console.log('JSON library of books:', JSON.stringify(libraryArr));
-console.log('type of JSON library:', typeof JSON.stringify(libraryArr));
+var libraryString = JSON.stringify(libraryArr);
+console.log('JSON library of books:', libraryString);
+console.log('type of JSON library:', typeof libraryString);
 
 var student = '{"Number id": 3731, "String name": "Steve"}';
 console.log('JSON string:', student);
