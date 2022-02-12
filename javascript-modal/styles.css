@@ -1,18 +1,23 @@
-.container {
+.bg-modal {
   width: 100%;
-  margin: auto;
+  height: 100%;
+  background-color: rgb(0 0 0 / 80%);
+  position: absolute;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  display: none;
 }
 
-body {
-  background-color: ;
-}
-
-.row {
+.modal-content {
+  height: 200px;
+  width: 400px;
+  background-color: white;
+  border-radius: 5px;
   display: flex;
-}
-
-.column-full {
-  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .open-button {
@@ -21,29 +26,9 @@ body {
   border: none;
   color: white;
   border-radius: 4px;
-  height: 40px;
-  width: 200px;
+  padding: 10px 30px;
   font-size: 22px;
   box-shadow: 0 1px 3px black;
-}
-
-/* .modal-off {
-  display: none;
-} */
-
-.modal-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  width: 400px;
-  border-radius: 5px;border-radius
 }
 
 .modal-button {
@@ -52,5 +37,18 @@ body {
   font-size: 20px;
   height: 35px;
   width: 80px;
+  border: none;
   border-radius: 5px;
+  box-shadow: 0 1px 3px black;
+}
+
+.modal-header {
+  font-weight: 700;
+  font-family: arial, sans-serif, black;
+}
+
+.no-btn {
+  width: 50%;
+  margin: 30px auto;
+  text-align: center;
 }
