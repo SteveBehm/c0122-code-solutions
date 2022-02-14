@@ -12,11 +12,6 @@ go through every member in the group until there is not another member after the
 display the output storage
 */
 function drop(array, count) {
-  var outputArr = [];
-  for (var i = 0; i < array.length; i++) {
-    if (i > count - 1) {
-      outputArr.push(array[i]);
-    }
-  }
+  var outputArr = array.slice(count);
   return outputArr;
 }

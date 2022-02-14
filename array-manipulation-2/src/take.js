@@ -9,11 +9,6 @@ do not place the value into the final output storage
 display the final output storage
 */
 function take(array, count) {
-  var outputArr = [];
-  for (var i = 0; i < array.length; i++) {
-    if (i < count) {
-      outputArr.push(array[i]);
-    }
-  }
+  var outputArr = array.slice(0, count);
   return outputArr;
 }
