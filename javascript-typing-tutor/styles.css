@@ -1,0 +1,15 @@
+.tutor-text {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tutor-para {
+  font-size: 3rem;
+  font-family: courier, sans-serif;
+}
+
+.g {
+  border-bottom: solid 3px black;
+}
