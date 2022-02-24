@@ -1,0 +1,41 @@
+.container {
+  width: 100%;
+  margin: 25% auto;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.column-half {
+  width: 50%;
+}
+
+.column-fourth {
+  width: 25%;
+}
+
+.column-full {
+  width: 100%;
+}
+
+.arrow-icon {
+  font-size: 44px;
+}
+
+.progress-icons {
+  margin-bottom: 2rem;
+}
+
+.align-left {
+  text-align: left;
+  padding: 0 2rem;
+}
+
+.align-right {
+  text-align: right;
+  padding: 0 2rem;
+}
