@@ -25,29 +25,6 @@ var players = [
   }
 ];
 
-var ballers = [
-  {
-    name: 'shaq',
-    hand: [],
-    points: 0
-  },
-  {
-    name: 'kobe',
-    hand: [],
-    points: 0
-  },
-  {
-    name: 'lebron',
-    hand: [],
-    points: 0
-  },
-  {
-    name: 'jordan',
-    hand: [],
-    points: 0
-  }
-];
-
 // Create a deck of cards
 var cardValues = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King'];
 var suits = ['hearts', 'spades', 'clubs', 'diamonds'];
@@ -64,7 +41,6 @@ function createDeck(values, type) {
       obj = {};
     }
   }
-  console.log('deck:', deck);
   return deck;
 }
 
@@ -99,7 +75,7 @@ return the players array to show the hands they have been dealt
 */
 function dealCards(people, randomCards) {
   var currentCard = 0;
-  for (var i = 0; i < players.length; i++) {
+  for (var i = 0; i < people.length; i++) {
     people[i].hand.push(randomCards[currentCard], randomCards[currentCard + 1]);
     currentCard += 2;
   }
@@ -132,7 +108,6 @@ function sumPoints(array) {
       }
     }
   }
-  console.log('players:', array);
   return array;
 }
 
@@ -145,22 +120,18 @@ function playGame(cardPlayers) {
   console.log('playGame playersPts:', playersPts);
 
   var winner = [];
-  var same = [];
-  var counter = 0;
-  for (var i = 0; i < cardPlayers.length; i++) {
-    if (cardPlayers[i].points > counter) {
-      counter = cardPlayers[i].points;
-      winner.push(cardPlayers[i]);
-    } else if (cardPlayers[i].points === counter) {
-      same.push(cardPlayers[i].points);
+  var sortedArr = _.sortBy(cardPlayers, ['points']);
+  console.log('sortedArr:', sortedArr);
+  for (var i = 0; i < sortedArr.length; i++) {
+    if (sortedArr[i].points >= sortedArr[sortedArr.length - 1].points) {
+      winner.push(sortedArr[i]);
     }
   }
-  for (var j = 0; j < winner.length; j++) {
-    if (winner[j] < same[0] && same.length > 1) {
-      playGame(same);
-    }
+  if (winner.length > 1) {
+    return playGame(winner);
   }
+
   console.log('winner', winner);
   return winner;
 }
-console.log('gamePlayed:', playGame(ballers));
+console.log('playGame winner:', playGame(players));
