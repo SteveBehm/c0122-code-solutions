@@ -25,6 +25,29 @@ var players = [
   }
 ];
 
+var ballers = [
+  {
+    name: 'shaq',
+    hand: [],
+    points: 0
+  },
+  {
+    name: 'kobe',
+    hand: [],
+    points: 0
+  },
+  {
+    name: 'lebron',
+    hand: [],
+    points: 0
+  },
+  {
+    name: 'jordan',
+    hand: [],
+    points: 0
+  }
+];
+
 // Create a deck of cards
 var cardValues = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King'];
 var suits = ['hearts', 'spades', 'clubs', 'diamonds'];
@@ -44,8 +67,6 @@ function createDeck(values, type) {
   console.log('deck:', deck);
   return deck;
 }
-var cards = createDeck(cardValues, suits);
-console.log('cards:', cards);
 
 /*
 Shuffle the cards using the Fisher-Yates Method
@@ -63,11 +84,8 @@ function shuffleCards(array) {
     array[j] = array[i];
     array[i] = temp;
   }
-  return cards;
+  return array;
 }
-
-var shuffledCards = shuffleCards(cards);
-console.log('shuffledCards:', shuffledCards);
 
 /*
 declare a variable that will hold the value of the index we want
@@ -79,15 +97,14 @@ from the shuffledCards array into the next players hand
 repeat until all players have cards
 return the players array to show the hands they have been dealt
 */
-function dealCards(array) {
+function dealCards(people, randomCards) {
   var currentCard = 0;
   for (var i = 0; i < players.length; i++) {
-    players[i].hand.push(shuffledCards[currentCard], shuffledCards[currentCard + 1]);
+    people[i].hand.push(randomCards[currentCard], randomCards[currentCard + 1]);
     currentCard += 2;
   }
-  return players;
+  return people;
 }
-var dealtCards = dealCards(shuffledCards);
 
 /*
 we need to go through each member of the given array
@@ -115,30 +132,35 @@ function sumPoints(array) {
       }
     }
   }
-  console.log('players:', players);
-  return players;
+  console.log('players:', array);
+  return array;
 }
-var playersPts = sumPoints(dealtCards);
 
-/*
-we need to go through each member of the array, which will be the players array
-that has the updated point totals called playersPts
-we need to specifically go through each players points values to compare them
-the player with the highest point value should be declared the winner
-display the winner's name in the console
-*/
-function findWinner(array) {
-  var winner = '';
-  var points = 0;
-  for (var i = 0; i < array.length; i++) {
-    if (points < array[i].points) {
-      points = array[i].points;
-      console.log('points:', points);
-    }
-    if (array[i].points === points) {
-      winner = array[i].name;
+// create a function to play a game for however many players you want
+function playGame(cardPlayers) {
+  var cards = createDeck(cardValues, suits);
+  var shuffledCards = shuffleCards(cards);
+  var dealtCards = dealCards(cardPlayers, shuffledCards);
+  var playersPts = sumPoints(dealtCards);
+  console.log('playGame playersPts:', playersPts);
+
+  var winner = [];
+  var same = [];
+  var counter = 0;
+  for (var i = 0; i < cardPlayers.length; i++) {
+    if (cardPlayers[i].points > counter) {
+      counter = cardPlayers[i].points;
+      winner.push(cardPlayers[i]);
+    } else if (cardPlayers[i].points === counter) {
+      same.push(cardPlayers[i].points);
     }
   }
+  for (var j = 0; j < winner.length; j++) {
+    if (winner[j] < same[0] && same.length > 1) {
+      playGame(same);
+    }
+  }
+  console.log('winner', winner);
   return winner;
 }
-console.log('winner:', findWinner(playersPts));
+console.log('gamePlayed:', playGame(ballers));
