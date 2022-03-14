@@ -27,9 +27,9 @@
     logAllGreetings(greetings);
 
     function getRandomGreeting(greetingList) {
-      const RANDOMINDEX = Math.floor(Math.random() * greetingList.length);
-      let greeting = greetingList[RANDOMINDEX];
-      if (RANDOMINDEX === 1) {
+      const randomIndex = Math.floor(Math.random() * greetingList.length);
+      let greeting = greetingList[randomIndex];
+      if (randomIndex === 1) {
         greeting = greeting + ' is a japanese greeting.';
       }
       return greeting;
