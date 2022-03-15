@@ -4,6 +4,9 @@ const $jokeForm = document.querySelector('#joke-form');
 
 const jokester = {
   tellJoke: function (setup, punchline) {
+    // we don't want to use an arrow function here yet because
+    // "this" gets defined at definition, which would then mean
+    // "this" used later in the code block would be the window object
     $jokeForm.classList.add('d-none');
     const $introStatement = this.renderJokePhrase('Hey Flash...');
     this.appendJokePhrase($introStatement);
@@ -38,8 +41,14 @@ const flash = {
 };
 
 function handleJokeSubmission(event) {
+  // could use an arrow function for above function definition
+  // because we are not using "this" in the code block
+  // however, we don't have to do that
   event.preventDefault();
   const { setup, punchline } = event.target.elements;
+  // what properties are being destructed? the setup and punchline are being destructed
+  // where are they being destructured from? from the elements property or the traget property of the event object
+  // which variables are they being assigned to? and being assigned to the setup and punchline variables
   jokester.tellJoke(setup.value, punchline.value);
 }
 
