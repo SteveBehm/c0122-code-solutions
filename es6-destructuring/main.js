@@ -4,6 +4,9 @@ const book1 = {
   libraryID: 3353
 };
 const { title, author, libraryID } = book1;
+// what is being destructured? properties title, author, and libraryID are being destructred
+// where is it being destructed from? from the book1 object
+// what are the destructured values being assigned to? and being assigned to 3 const variables title, author, and libraryID.
 const description1 = `The tite of the book is ${title}, the author is ${author}, and the library id is ${libraryID}`;
 console.log('description1:', description1);
 
@@ -39,6 +42,10 @@ const library = [
     libraryID: 1233
   }
 ];
+
+// what is being destructured? elements 1, 2, and 3 are being destructred
+// where is it being destructed from? from the library array
+// what are the destructured values being assigned to? and being assigned to 3 const variables title, author, and libraryID.
 
 const [book3, book4, book5] = library;
 console.log('book3:', book3);
