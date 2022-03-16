@@ -1,6 +1,3 @@
-function divide(num1, num2) {
-  const quotient = num1 / num2;
-  return quotient;
-}
+const divide = (num1, num2) => num1 / num2;
 
 module.exports = divide;

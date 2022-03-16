@@ -3,12 +3,16 @@ const subtract = require('./subtract');
 const multiply = require('./multiply');
 const divide = require('./divide');
 
-if (process.argv[3] === 'plus') {
-  console.log(`result: ${add(parseInt(process.argv[2]), parseInt(process.argv[4]))}`);
-} else if (process.argv[3] === 'minus') {
-  console.log(`result: ${subtract(parseInt(process.argv[2]), parseInt(process.argv[4]))}`);
-} else if (process.argv[3] === 'times') {
-  console.log(`result: ${multiply(parseInt(process.argv[2]), parseInt(process.argv[4]))}`);
-} else if (process.argv[3] === 'over') {
-  console.log(`result: ${divide(parseInt(process.argv[2]), parseInt(process.argv[4]))}`);
+const firstNum = parseInt(process.argv[2]);
+const secondNum = parseInt(process.argv[4]);
+const operatorStr = process.argv[3];
+
+if (operatorStr === 'plus') {
+  console.log(`result: ${add(firstNum, secondNum)}`);
+} else if (operatorStr === 'minus') {
+  console.log(`result: ${subtract(firstNum, secondNum)}`);
+} else if (operatorStr === 'times') {
+  console.log(`result: ${multiply(firstNum, secondNum)}`);
+} else if (operatorStr === 'over') {
+  console.log(`result: ${divide(firstNum, secondNum)}`);
 }

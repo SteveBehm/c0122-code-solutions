@@ -1,6 +1,3 @@
-function product(num1, num2) {
-  const multiply = num1 * num2;
-  return multiply;
-}
+const product = (num1, num2) => num1 * num2;
 
 module.exports = product;
