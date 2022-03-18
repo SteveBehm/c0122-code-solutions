@@ -1,0 +1,29 @@
+.tutor-text {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tutor-para {
+  font-size: 3rem;
+  font-family: courier, sans-serif;
+}
+
+.normal {
+  color: black;
+  border-bottom: solid 3px black;
+}
+
+.correct {
+  color: lightgreen;
+}
+
+.incorrect {
+  border-bottom: solid 3px red;
+  color: red;
+}
+
+.black {
+  color: black;
+}
