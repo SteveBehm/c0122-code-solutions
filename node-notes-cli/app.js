@@ -1,6 +1,7 @@
 const fs = require('fs');
 const userInput = process.argv[2]; // this is the 'read' string the user will write on the command line
 const userNote = process.argv[3];
+const editedNote = process.argv[4];
 
 // we want to read the data from the data.json file
 fs.readFile('data.json', 'utf8', (err, data) => {
@@ -13,7 +14,7 @@ fs.readFile('data.json', 'utf8', (err, data) => {
     for (const property in parsedData.notes) {
       console.log(`${property}: ${parsedData.notes[property]}`);
     }
-  } else if (userInput === 'create') {
+  } else if (userInput.toLowerCase() === 'create') {
     /*
     if the userInput is create we want to create a new note and add it to
     data.json as the next note in the note object of the greater object
@@ -32,8 +33,42 @@ fs.readFile('data.json', 'utf8', (err, data) => {
         process.exit(1);
       }
     });
-  }
-  if (err) {
+  } else if (userInput.toLowerCase() === 'update') {
+    /*
+    when a user uses the word update and gives us the number of the note they wish to update
+    we will grab that note and alter it with their new note input
+    */
+    for (const property in parsedData.notes) {
+      if (userNote.toString() === property) {
+        parsedData.notes[property] = editedNote;
+        const revisedNote = JSON.stringify(parsedData, null, 2);
+        fs.writeFile('data.json', revisedNote, 'utf-8', err => {
+          if (err) {
+            console.error(err);
+            process.exit(1);
+          }
+        });
+      }
+    }
+  } else if (userInput.toLowerCase() === 'delete') {
+    /*
+    when a user uses the word delete and gives us the number of the note they
+    wish to delete. Delete that note from the data.json file and don't
+    alter the nextId value.
+    */
+    for (const property in parsedData.notes) {
+      if (userNote.toString() === property) {
+        delete parsedData.notes[property];
+        const currentNotes = JSON.stringify(parsedData, null, 2);
+        fs.writeFile('data.json', currentNotes, 'utf-8', err => {
+          if (err) {
+            console.error(err);
+            process.exit(1);
+          }
+        });
+      }
+    }
+  } else if (err) {
     console.error(err);
     process.exit(1);
   }
