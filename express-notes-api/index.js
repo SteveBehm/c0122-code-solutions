@@ -1,7 +1,9 @@
 const express = require('express');
 const appObj = express();
+const fs = require('fs');
 const dataJSON = require('./data.json');
 const notesObj = dataJSON.notes;
+let dataId = dataJSON.nextId;
 
 appObj.listen(3000, () => {
   // eslint-disable-next-line no-console
@@ -36,5 +38,34 @@ appObj.get('/api/notes/:id', (req, res) => {
     res.status(404).json(noId);
   } else {
     res.json(notesObj[targetNoteId]);
+  }
+});
+
+appObj.use(express.json());
+
+appObj.post('/api/notes', (req, res) => {
+  const newNote = req.body;
+
+  if (newNote.content === undefined) {
+    const errObj = {
+      error: 'content is a required field'
+    };
+    res.status(400).json(errObj);
+
+  } else if (newNote.content !== undefined) {
+    newNote.id = dataId;
+    dataJSON.notes[dataId] = newNote;
+    dataId++;
+    const newNoteJSON = JSON.stringify(dataJSON, null, 2);
+    fs.writeFile('data.json', newNoteJSON, 'utf8', err => {
+      if (err) {
+        const postErr = {
+          error: 'an unexpected error occurred.'
+        };
+        console.error(postErr);
+        res.status(500).json(postErr);
+      }
+      res.status(201).send(newNote);
+    });
   }
 });
