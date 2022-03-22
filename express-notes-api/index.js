@@ -21,9 +21,6 @@ appObj.listen(3000, () => {
 // if there are no notes then the response will be an empty array
 appObj.get('/api/notes', (req, res) => {
   const gradeArr = [];
-  if (dataJSON === {}) {
-    res.json(gradeArr);
-  }
 
   for (const property in dataJSON.notes) {
     gradeArr.push(dataJSON.notes[property]);
@@ -99,6 +96,9 @@ appObj.post('/api/notes', (req, res) => {
         console.error(postErr);
         // if an error happens then the status 500 will be sent from the server
         res.status(500).json(postErr);
+        // return acts as a guard to prevent the server from trying to respond
+        // twice to the same response.
+        return;
       }
 
       // this will send the new note back to the client and the created status code
@@ -139,6 +139,7 @@ appObj.delete('/api/notes/:id', (req, res) => {
         };
         console.error(postErr);
         res.status(500).json(postErr);
+        return;
       }
 
       // this will send the status to the client from the server
@@ -189,6 +190,7 @@ appObj.put('/api/notes/:id', (req, res) => {
         };
         console.error(postErr);
         res.status(500).json(postErr);
+        return;
       }
 
       // this will send the client a status code and the updated note
