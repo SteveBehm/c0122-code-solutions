@@ -3,7 +3,7 @@ const appObj = express();
 const fs = require('fs');
 const dataJSON = require('./data.json');
 const notesObj = dataJSON.notes;
-let dataId = dataJSON.nextId;
+const dataId = dataJSON.nextId;
 
 appObj.listen(3000, () => {
   // eslint-disable-next-line no-console
@@ -54,8 +54,8 @@ appObj.post('/api/notes', (req, res) => {
 
   } else if (newNote.content !== undefined) {
     newNote.id = dataId;
-    dataJSON.notes[dataId] = newNote;
-    dataId++;
+    dataJSON.notes[dataId.toString()] = newNote;
+    dataJSON.nextId++;
     const newNoteJSON = JSON.stringify(dataJSON, null, 2);
     fs.writeFile('data.json', newNoteJSON, 'utf8', err => {
       if (err) {
@@ -66,6 +66,35 @@ appObj.post('/api/notes', (req, res) => {
         res.status(500).json(postErr);
       }
       res.status(201).send(newNote);
+    });
+  }
+});
+
+appObj.delete('/api/notes/:id', (req, res) => {
+  const noteId = req.params.id;
+
+  if (!Number.isInteger(parseInt(noteId)) || parseInt(noteId) <= 0) {
+    const errObj = {
+      error: 'id must be a positive integer'
+    };
+    res.status(400).json(errObj);
+  } else if (dataJSON.notes[noteId] === undefined) {
+    const noId = {
+      error: `cannot find note with id ${noteId}`
+    };
+    res.status(404).json(noId);
+  } else {
+    delete dataJSON.notes[noteId];
+    const currentNotes = JSON.stringify(dataJSON, null, 2);
+    fs.writeFile('data.json', currentNotes, 'utf8', err => {
+      if (err) {
+        const postErr = {
+          error: 'an unexpected error occurred.'
+        };
+        console.error(postErr);
+        res.status(500).json(postErr);
+      }
+      res.sendStatus(204);
     });
   }
 });
