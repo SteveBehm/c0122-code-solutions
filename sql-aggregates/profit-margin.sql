@@ -1,0 +1,8 @@
+--List the 5 most profitable DVD titles in inventory.
+--Profit is the amount of money made past the replacement cost.
+--For this challenge, we're counting payments from customers as
+--revenue, and not money owed for rentals. Don't forget,
+--there are multiple copies of each film in inventory.
+--You will likely benefit from first calculating the cost of
+--each film and the revenue of each film in separate common
+--table expressions.
