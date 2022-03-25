@@ -23,22 +23,22 @@ console.log('sum', sum);
 const product = numbers.reduce((previousValue, currentValue) => previousValue * currentValue);
 console.log('produce:', product);
 
-let runningBalance = 0;
+const initialValue = 0;
 const balance = account.reduce(function (previousValue, currentValue) {
   if (currentValue.type === 'deposit') {
-    runningBalance += currentValue.amount;
+    previousValue += currentValue.amount;
   } else if (currentValue.type === 'withdrawal') {
-    runningBalance -= currentValue.amount;
+    previousValue -= currentValue.amount;
   }
-  return runningBalance;
-}, {});
+  return previousValue;
+}, initialValue);
 console.log('balance', balance);
 
-const outputObj = {};
+const firstValue = {};
 const composite = traits.reduce(function (previousValue, currentValue) {
   for (const property in currentValue) {
-    outputObj[property] = currentValue[property];
+    previousValue[property] = currentValue[property];
   }
-  return outputObj;
-}, {});
+  return previousValue;
+}, firstValue);
 console.log('composite:', composite);
