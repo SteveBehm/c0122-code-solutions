@@ -53,17 +53,10 @@ app.get('/api/grades', (req, res) => {
 });
 
 app.post('/api/grades', (req, res) => {
-  const newGrade = req.body;
   const name = req.body.name;
   const course = req.body.course;
   const score = (req.body.score);
 
-  if (newGrade === {}) {
-    res.status(400).json({
-      error: 'need to include: name, course, and score'
-    });
-    return;
-  }
   if (name === undefined || name === '') {
     res.status(400).json({
       error: 'name is a required field'
@@ -110,7 +103,6 @@ app.post('/api/grades', (req, res) => {
 });
 
 app.put('/api/grades/:gradeId', (req, res) => {
-  const updatedGrade = req.body;
   const gradeId = req.body.gradeId;
   const name = req.body.name;
   const course = req.body.course;
@@ -119,12 +111,6 @@ app.put('/api/grades/:gradeId', (req, res) => {
   if (!Number.isInteger(parseInt(gradeId) || parseInt(gradeId) > 0)) {
     res.status(400).json({
       error: 'gradeId needs to be a positive integer > 0.'
-    });
-    return;
-  }
-  if (updatedGrade === {}) {
-    res.status(400).json({
-      error: 'need to include: gradeId, name, course, and score'
     });
     return;
   }
