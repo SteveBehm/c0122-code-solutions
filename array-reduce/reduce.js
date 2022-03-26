@@ -2,17 +2,18 @@
 define reduce() from scratch as if it did not already exist on arrays.
 */
 
-/*
-create an output value based on the inital value
-loop through the array
-*/
+function reducer(array, reducer, initialValue) {
+  var finalValue = initialValue;
+  var i = 0;
 
-function reduce(array, reducer, initialValue) {
-  let outputValue = initialValue;
-
-  for (let i = initialValue; i < array.length; i++) {
-    outputValue += reducer[array[i]];
+  if (arguments.length === 2) {
+    i = 1;
+    finalValue = array[0];
   }
 
-  return outputValue;
+  for (; i < array.length; i++) {
+    finalValue = reducer(finalValue, array[i], i, array);
+  }
+
+  return finalValue;
 }
