@@ -1,3 +1,1 @@
-function noop() {}
-
-module.exports = noop;
+export function noop() {}
