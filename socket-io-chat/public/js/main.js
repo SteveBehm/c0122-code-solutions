@@ -25,7 +25,7 @@ chatForm.addEventListener('submit', e => {
 
   // clear input
   e.target.elements.msg.value = '';
-  e.target.elements.msg.value.focus();
+  e.target.elements.msg.focus();
 
 });
 
