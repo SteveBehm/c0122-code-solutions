@@ -1,0 +1,35 @@
+button {
+  border: 0.2rem solid black;
+  box-shadow: 3px 3px 0 black;
+  padding: 10px 20px;
+}
+
+.dark-purple {
+  background-color: rebeccapurple;
+  color: white;
+}
+
+.light-purple {
+  background-color: purple;
+  color: white;
+}
+
+.red {
+  background-color: red;
+  color: white;
+}
+
+.orange {
+  background-color: orange;
+  color: black;
+}
+
+.yellow {
+  background-color: yellow;
+  color: black;
+}
+
+.white {
+  background-color: white;
+  color: black;
+}
