@@ -1,0 +1,48 @@
+div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-div-off {
+  background-color: #ddd;
+  border: solid black;
+  height: 50px;
+  width: 100px;
+  border-radius: 26px;
+  margin: 1rem;
+  position: relative;
+}
+
+.toggle-div-off {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border: solid black;
+  border-radius: 50%;
+  position: absolute;
+  top: -10;
+  left: 0;
+}
+
+.btn-div-on {
+  background-color: green;
+  border: solid black;
+  height: 50px;
+  width: 100px;
+  border-radius: 26px;
+  margin: 1rem;
+  position: relative;
+}
+
+.toggle-div-on {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border: solid black;
+  border-radius: 50%;
+  position: absolute;
+  top: -10;
+  right: 0;
+}
