@@ -11,7 +11,7 @@ const pokedex = [
 
 function PokeList() {
   const listItems = pokedex.map(pokemon =>
-    <li key={pokemon.number.toString()}>{pokemon.name}</li>
+    <li key={pokemon.number}>{pokemon.name}</li>
   );
   return (
     <ul>{listItems}</ul>
@@ -24,3 +24,17 @@ const element = (
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(element);
+
+/*
+const element = (
+  <ul>
+    {
+      pokedex.map(pokemon => {
+        return <li key={pokemon.number}>{pokemon.name}</li>;
+      })
+    }
+  </ul>
+);
+
+This is another way it could be done without a function required.
+*/
