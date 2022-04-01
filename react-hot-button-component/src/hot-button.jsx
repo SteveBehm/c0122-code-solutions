@@ -9,7 +9,12 @@ export class HotButton extends React.Component {
   }
 
   handleClick() {
-    this.setState({ clickCount: this.state.clickCount + 1 });
+    // read current state
+    // compute new state
+    // replace the current state
+    const currentClicks = this.state.clickCount;
+    const newClicks = currentClicks + 1;
+    this.setState({ clickCount: newClicks });
   }
 
   render() {
