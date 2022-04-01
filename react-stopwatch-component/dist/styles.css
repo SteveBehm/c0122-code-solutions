@@ -1,0 +1,17 @@
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  border: solid black;
+  border-radius: 50%;
+  height: 7rem;
+  width: 7rem;
+}
+
+.icon-div {
+  margin-top: 1rem;
+}
