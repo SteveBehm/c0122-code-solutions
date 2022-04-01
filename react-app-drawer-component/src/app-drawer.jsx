@@ -9,6 +9,7 @@ export class MenuDrawer extends React.Component {
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.goToLanding = this.goToLanding.bind(this);
   }
 
   handleClick() {
@@ -21,84 +22,52 @@ export class MenuDrawer extends React.Component {
     }
   }
 
-  render() {
-    return (
-      <div className='parent-div'>
-        <div className='icon-div'>
-          <i className="fa-solid fa-bars" onClick={this.handleClick} />
-        </div>
-        <div className='img-div'>
-        </div>
-        {/* <div className='menu-div'>
-          <div className='menu-header'>
-            <h3>Choose a Game</h3>
-          </div>
-          <div className='game-choice'>
-            <p>The Legend of Zelda</p>
-          </div>
-          <div className='game-choice'>
-            <p>A Link to The Past</p>
-          </div>
-          <div className='game-choice'>
-            <p>Ocarina of Time</p>
-          </div>
-          <div className='game-choice'>
-            <p>The Wind Waker</p>
-          </div>
-          <div className='game-choice'>
-            <p>Breath of the Wild</p>
-          </div>
-        </div> */}
-      </div>
-    );
+  goToLanding() {
+    if (this.state.isClicked === true) {
+      this.setState({ isClicked: false });
+    }
   }
 
-  // render() {
-  //   if (this.state.isClicked === true) {
-  //     // show the opened menu
-  //     return (
-  //       <div className='parent-div'>
-  //         <div className='landing-div'>
-  //           <div className='img-div'>
-  //             {/* <img src="./img/surf-wagon-jeep.jpg" alt="jeep with surf boards"></img> */}
-  //           </div>
-  //         </div>
-  //         <div className='menu-div'>
-  //           <div className='menu-header'>
-  //             <h3>Choose a Game</h3>
-  //           </div>
-  //           <div className='game-choice'>
-  //             <p>The Legend of Zelda</p>
-  //           </div>
-  //           <div className='game-choice'>
-  //             <p>A Link to The Past</p>
-  //           </div>
-  //           <div className='game-choice'>
-  //             <p>Ocarina of Time</p>
-  //           </div>
-  //           <div className='game-choice'>
-  //             <p>The Wind Waker</p>
-  //           </div>
-  //           <div className='game-choice'>
-  //             <p>Breath of the Wild</p>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     );
-  //   } else if (this.state.isClicked === false) {
-  //     // show the menu icon at the top left corner
-  //     return (
-  //       <div className='parent-div'>
-  //         <div className='bg-div'>
-  //           <div className='img-div'>
-  //             {/* <img src="../images/surf-wagon-jeep.jpg" alt="jeep with surf boards"></img> */}
-  //           </div>
-  //         </div>
-  //         <div className='icon-div'>
-  //           <FontAwesomeIcon icon="fa-solid fa-bars" onClick={this.handleClick}></i>
-  //         </div>
-  //       </div>
-  //     );
-  //   }
-  // }
+  render() {
+    if (this.state.isClicked === false) {
+      return (
+        <>
+          <div className='parent-div view-swap'>
+            <div className='icon-div'>
+              <i className="fa-solid fa-bars" onClick={this.handleClick} />
+            </div>
+            <div className='img-div'>
+            </div>
+          </div>
+        </>
+      );
+    } else if (this.state.isClicked === true) {
+      return (
+        <>
+          <div className='bg-modal' onClick={this.goToLanding}>
+            <div className='menu-div'>
+              <div className='menu-header'>
+                <h3>Choose a Game</h3>
+              </div>
+              <div className='game-choice'>
+                <a onClick={this.goToLanding}>The Legend of Zelda </a>
+              </div>
+              <div className='game-choice'>
+                <a onClick={this.goToLanding}>A Link to The Past</a>
+              </div>
+              <div className='game-choice'>
+                <a onClick={this.goToLanding}>Ocarina of Time</a>
+              </div>
+              <div className='game-choice'>
+                <a onClick={this.goToLanding}>The Wind Waker</a>
+              </div>
+              <div className='game-choice'>
+                <a onClick={this.goToLanding}>Breath of the Wild</a>
+              </div>
+            </div>
+          </div>
+        </>
+      );
+    }
+  }
 }

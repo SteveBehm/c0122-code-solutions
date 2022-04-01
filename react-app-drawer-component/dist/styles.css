@@ -5,8 +5,8 @@ body {
 
 .parent-div {
   height: 100vh;
-  display: flex;
   position: relative;
+  display: flex;
 }
 
 .menu-div {
@@ -14,6 +14,7 @@ body {
   width: 15%;
   padding-left: 1rem;
   border-right: solid black;
+  background-color: white;
 }
 
 .img-div {
@@ -33,9 +34,28 @@ body {
   left: 0;
   height: 5rem;
   width: 5rem;
+  padding-left: 1rem;
 }
 
 i {
   color: black;
   font-size: 4rem;
+  cursor: pointer;
+}
+
+.game-choice {
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+/* styling for the modal */
+
+.bg-modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 80%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
 }
