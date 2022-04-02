@@ -32,19 +32,39 @@ export class MenuDrawer extends React.Component {
     if (this.state.isClicked === false) {
       return (
         <>
-          <div className='parent-div view-swap'>
+          <div className='parent-div'>
+            <div className='menu-div off'>
+              <div className='menu-header'>
+                <h3>Choose a Game</h3>
+              </div>
+              <div className='game-choice'>
+                <a onClick={this.goToLanding}>The Legend of Zelda </a>
+              </div>
+              <div className='game-choice'>
+                <a onClick={this.goToLanding}>A Link to The Past</a>
+              </div>
+              <div className='game-choice'>
+                <a onClick={this.goToLanding}>Ocarina of Time</a>
+              </div>
+              <div className='game-choice'>
+                <a onClick={this.goToLanding}>The Wind Waker</a>
+              </div>
+              <div className='game-choice'>
+                <a onClick={this.goToLanding}>Breath of the Wild</a>
+              </div>
+            </div>
             <div className='icon-div'>
               <i className="fa-solid fa-bars" onClick={this.handleClick} />
             </div>
-            <div className='img-div'>
-            </div>
+          </div>
+          <div className='img-div'>
           </div>
         </>
       );
     } else if (this.state.isClicked === true) {
       return (
         <>
-          <div className='bg-modal' onClick={this.goToLanding}>
+          <div className='parent-div dark' onClick={this.goToLanding}>
             <div className='menu-div'>
               <div className='menu-header'>
                 <h3>Choose a Game</h3>
@@ -65,6 +85,11 @@ export class MenuDrawer extends React.Component {
                 <a onClick={this.goToLanding}>Breath of the Wild</a>
               </div>
             </div>
+            <div className='icon-div'>
+              <i className="fa-solid fa-bars" onClick={this.handleClick} />
+            </div>
+          </div>
+          <div className='img-div'>
           </div>
         </>
       );
