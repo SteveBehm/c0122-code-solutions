@@ -39,3 +39,11 @@
   text-align: right;
   padding: 0 2rem;
 }
+
+img.content {
+  display: flex;
+}
+
+img.content.hidden {
+  display: none;
+}
