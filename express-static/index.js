@@ -5,7 +5,7 @@ const path = require('path');
 const newPath = path.join(__dirname, 'public');
 console.log('newPath:', newPath);
 
-const servePublicFiles = express.static('public');
+const servePublicFiles = express.static(newPath);
 
 app.use(servePublicFiles);
 
