@@ -13,10 +13,8 @@ function authorizationMiddleware(req, res, next) {
 
     req.user = payload;
 
-    next();
-
   } catch (err) {
-    console.error(err);
+    next(err);
   }
   /**
    * Try to get the 'X-Access-Token' from the request headers.
