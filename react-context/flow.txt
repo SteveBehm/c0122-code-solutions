@@ -1,0 +1,132 @@
+
+USER CAN SIGN IN
+*client*
+  the constructor method runs first to pull any props into the program
+
+  the state is set
+
+  then the render method runs once
+
+  the user types in a username and password
+
+  typing in the username triggers the handleChange method and changes
+  the state to reflect the new username value
+  the render method is called after each change in state to show the
+  username being typed
+
+  typing in the password also triggers the handleChange method and changes
+  the state to reflect the new password value
+  the render method is called and the password is shown
+
+  the user clicks the sumbit button, which submits the form and triggers
+  the handleSubmit method, which passes the event prop
+
+  a request is formed with the body in JSON format and the
+  content-type application/json
+
+  the request is sent to the server via fetch with the new username and password
+  using a specific api depending on if the action was register or sign in
+
+  the request asks for a JSON response
+
+  the client is told that if the promise if fulfilled to convert the response to JSON
+
+  if the promise returned is fulfilled then we need to see if the action was 'sign up'
+  and if it isn't sign up
+  call the onSignIn method of the props property of the this object passing
+  the result from the fetch request as the argument
+
+*server*
+  In index.js the post method is called
+  the program check to make sure there is a username and password, otherwise it throws
+  an error and tells the client invalud login
+  then the sql database is queried to see if the username and password match the
+  login provided, if there is no username match then an error is thrown
+  if the username is found then the hashedPassword and hashed version of the password
+  given are compared, if they are mathing then we sign the token for the user so it can
+  be checked as the user uses different functionality of the website
+  the response will be a json object with the token and users payload
+
+
+
+
+
+USER CAN SIGN UP
+
+*client*
+  the constructor method runs first to pull any props into the program
+
+  the state is set
+
+  then the render method runs once
+
+  the user clicks register now link
+
+  this causes the alternateActionHref, alternateActionText,
+  and submit button/link to change to allow a user to register or
+  return to sign in
+
+  the user types in a username and password
+
+  typing in the username triggers the handleChange method and changes
+  the state to reflect the new username value
+  the render method is called after each change in state to show the
+  username being typed
+
+  typing in the password also triggers the handleChange method and changes
+  the state to reflect the new password value
+  the render method is called and the password is shown
+
+  the user clicks the sumbit button, which submits the form and triggers
+  the handleSubmit method, which passes the event prop
+
+  a request is formed with the body in JSON format and the
+  content-type application/json
+
+  the request is sent to the server via fetch with the new username and password
+  using a specific api depending on if the action was register or sign in
+
+  the request asks for a JSON response
+
+  the client is told that if the promise if fulfilled to convert the response to JSON
+
+  if the promise returned is fulfilled then we need to see if the action was 'sign up'
+  and if it is sign up we need to switch to the sign-in view using the window.location.hash
+  so the person can sign in
+
+  see the sign in feature for the next steps
+
+*Server*
+  in index.js the post method for signing in is called
+  if there is no username or password an error is thrown
+  if there is a username and password
+  argon2 is called to hash the password and then store the usename and hashed
+  password in the sql database into the users table
+  the username, userId and createdAt is returned to the client in a json format
+
+USER CAN SIGN Out
+*client*
+  the user clicks the sign out link in the navbar which will trigger the handleSignOut
+  method in the app.jsx module on the server side
+  this method will remove the react-context-jwt from the localStorage
+  and it will just the state so that the user is now null
+  when the state is changed this will trigger another render() method call bringing
+  the user back to the main login page
+
+*server*
+  this method will remove the react-context-jwt (token) from the localStorage
+  and it will just the state so that the user is now null
+  when the state is changed this will trigger another render() method call bringing
+  the user back to the main login page
+
+
+USER CAN STAY SIGNED IN IF THEY REFRESH PAGE
+  on app.jsx the constructor method is executed first after a REFRESH
+  then the render method is called, however, we will see a blank page
+  as the state for user is null.
+  then the componentDidMount method will be called
+  during this method call we look into local storage to try and find
+  a token being used and decode it
+  if there isn't a token then user = null and the home page will render
+  if there is a token it will be decoded and the state for user is changed
+  to the decoded token and is authorizing is changed to false
