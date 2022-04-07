@@ -121,6 +121,7 @@ USER CAN SIGN Out
 
 
 USER CAN STAY SIGNED IN IF THEY REFRESH PAGE
+*client*
   on app.jsx the constructor method is executed first after a REFRESH
   then the render method is called, however, we will see a blank page
   as the state for user is null.
