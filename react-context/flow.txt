@@ -3,51 +3,65 @@ USER CAN SIGN IN
 *client*
   the constructor method runs first to pull any props into the program
 
-  the state is set
+  the state is set with no user and isAuthorizing to be true
 
-  then the render method runs once
+  then the render method runs once and returns null since isAuthorizing is currently true
 
-  the user types in a username and password
+  componentDidMount runs and we see if a hashchange has occurred but it hasn'table
+  then we try to look for a token, however there won't in case the user has
+  already signed in and refreshed the page.
+  Since we are currently signing in we have no token yetbe one yet
 
-  typing in the username triggers the handleChange method and changes
-  the state to reflect the new username value
-  the render method is called after each change in state to show the
-  username being typed
+  the user is still null and then the state is set to isAuthorizing: false
+  because now we have checked for the token
+  isAuthorizing lets us know if we have checked for a token or not
 
-  typing in the password also triggers the handleChange method and changes
-  the state to reflect the new password value
-  the render method is called and the password is shown
+  now that the isAuthorizing is false the render method will evaluate differently
+  we set the contextValue to include user, route, handleSignIn, and handleSignOut
+  then in the return statement we use a content.Provider so we can use those props
+  throughout our compared
 
-  the user clicks the sumbit button, which submits the form and triggers
-  the handleSubmit method, which passes the event prop
+  the renderPahe method is called within the render method and the program needs
+  to determine what page to render
 
-  a request is formed with the body in JSON format and the
-  content-type application/json
+  if the route ("path") is empty we go to the home page and
+  if the route is sign-in or sign-up we go to the authorization page
 
-  the request is sent to the server via fetch with the new username and password
-  using a specific api depending on if the action was register or sign in
+  in this case we need to go to the Auth.jsx to see what happens next
+  in the AuthPage class we first look to see if we have a user, but we don't
+  and that mean the return is called and specifically AuthForm the key, action, and onSignIn properties
 
-  the request asks for a JSON response
+  on auth-form the constructor runs followed by the render method once to show
+  the sign in form with the 2 input a link and a button and we wait to see what
+  the user does
 
-  the client is told that if the promise if fulfilled to convert the response to JSON
+  the user will trigger the handleChange method when they begin typing the username
+  or the password into those inputs. Each letter triggers a re-render because the state
+  will change as the value of the username and password changes
 
-  if the promise returned is fulfilled then we need to see if the action was 'sign up'
-  and if it isn't sign up
-  call the onSignIn method of the props property of the this object passing
-  the result from the fetch request as the argument
+  when the user clicks submit the handleSubmit method runs which will begin
+  the programs interaction with the backend.
+  handleSubmit sends a post request via fetch to the database with our users username and password
 
-*server*
-  In index.js the post method is called
-  the program check to make sure there is a username and password, otherwise it throws
-  an error and tells the client invalud login
-  then the sql database is queried to see if the username and password match the
-  login provided, if there is no username match then an error is thrown
-  if the username is found then the hashedPassword and hashed version of the password
-  given are compared, if they are mathing then we sign the token for the user so it can
-  be checked as the user uses different functionality of the website
-  the response will be a json object with the token and users payload
+  on the back end our program is listening for sign-in post requests
+  if there isn't a username and password it will throw and errorif there is both
+  then the program queries the database with the intention to compare the users
+  stored hashedPassword with the one they just typed
+  if they are a match then we send the user info from the database back to the server
+  and a fresh token that has been signed
+  this will trigger the onSignIn function to be called, which is a prop of the
+  AuthForm call in the AuthPage class and the value is handleSignIn
+  that means we are actually calling the handleSignIn method on the app.jsx
 
+  now the user and token is there and the state is set so the user value is user
+  which triggers a re-render and isAuthorizing is still false
+  this means that the renderPage method is called
 
+  the renderPage method checks the route which is now and empty string
+  this causes the home class to be called taking us to home.jsx
+  the Home class checks to make sure it is the user and not a falsy value
+  since we have an actual user the page renders showing us what we all
+  wanted to see.
 
 
 
