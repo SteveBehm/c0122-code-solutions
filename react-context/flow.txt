@@ -21,7 +21,7 @@ USER CAN SIGN IN
   then in the return statement we use a content.Provider so we can use those props
   throughout our compared
 
-  the renderPahe method is called within the render method and the program needs
+  the renderPage method is called within the render method and the program needs
   to determine what page to render
 
   if the route ("path") is empty we go to the home page and
