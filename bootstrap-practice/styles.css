@@ -63,5 +63,9 @@ body {
 }
 
 .edit-card {
-  background-color: #292929;
+  background-color: #333;
+}
+
+.form-control::placeholder {
+  color: white;
 }
