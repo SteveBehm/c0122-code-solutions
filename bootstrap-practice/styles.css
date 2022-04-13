@@ -1,0 +1,71 @@
+body {
+  background-color: #333;
+}
+
+.dark-color {
+  background-color: #292929;
+}
+
+.card-body,
+.card-header {
+  border: 1px solid lightgray;
+}
+
+.message {
+  background-color: #535252;
+}
+
+.logo {
+  font-size: 2rem;
+  color: white;
+  text-shadow:
+    -1px -1px 0 red,
+    1px -1px 0 red,
+    -1px 1px 0 red,
+    1px 1px 0 red;
+}
+
+.dark-input {
+  color: white;
+  background-color: #292929;
+}
+
+.dark-input:focus {
+  background: #292929;
+  color: white;
+}
+
+#send-msg {
+  border: solid white;
+}
+
+.name {
+  color: #343a40;
+}
+
+.position,
+.location {
+  color: #8d8a8a;
+}
+
+.chat {
+  font-size: 1.5rem;
+}
+
+.profile-pic {
+  height: 50vh;
+  object-fit: cover;
+}
+
+.edit-profile-pic {
+  height: 60vh;
+  object-fit: cover;
+}
+
+.edit-card {
+  background-color: #333;
+}
+
+.form-control::placeholder {
+  color: white;
+}

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+  <title>Bootstrap Practice</title>
+</head>
+<body>
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-lg dark-color navbar-dark">
+    <div class="container">
+      <a href="#" class="navbar-brand"><span class="logo">Goalie Finder</span></a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navmenu"
+      ><span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="#edit-profile" class="nav-link">Edit Profile</a>
+          </li>
+          <li class="nav-item">
+            <a href="#sign-out" class="nav-link">Sign Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--Edit Profile-->
+  <div class="container d-none">
+    <div class="row">
+      <h2 class="text-center text-light mt-2">Edit Profile</h2>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="card p-0 mt-2 edit-card border-0" style="width: 60rem;">
+        <img src="images/Patrick Roy goalie.jpeg" class="edit-profile-pic card-img-top" alt="...">
+        <div class="card-body border-0 p-0 mt-3">
+          <form>
+            <div class="input-group mb-3">
+              <input type="text" class="dark-input form-control" placeholder="Name.." aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="mb-3">
+              <select class="dark-input form-select" aria-label="Default select example">
+                <option selected>Position Preference</option>
+                <option value="1">Ice goalie</option>
+                <option value="2">Roller goalie</option>
+                <option value="3">Goalie for either</option>
+                <option value="4">Ice player</option>
+                <option value="5">Roller player</option>
+                <option value="6">Player for either</option>
+              </select>
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="dark-input form-control" placeholder="Location.." aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="mb-3">
+              <select class="dark-input form-select" aria-label="Default select example">
+                <option selected>What do you need?</option>
+                <option value="1">Available to play goalie</option>
+                <option value="2">Unavailable to play goalie</option>
+                <option value="3">Looking for goalie</option>
+                <option value="4">We have a goalie</option>
+              </select>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Filter Links-->
+  <section>
+    <div class="container">
+      <div class="row pt-1">
+        <div class="col-4 text-start">
+          <a href="#" class="filter-link text-light text-decoration-none">All Users</a>
+        </div>
+        <div class="col-4 text-center">
+          <a href="#" class="filter-link text-light text-decoration-none">Available</a>
+        </div>
+        <div class="col-4 text-end">
+          <a href="#" class="filter-link text-light text-decoration-none">Unavailable</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--User Library-->
+  <section>
+    <div class="container mt-2">
+      <h2 class="text-center text-light">All Users</h2>
+      <div class="row g-5">
+        <div class="col-md-6 col-lg-4">
+          <div class="card bg-white rounded">
+            <img class="profile-pic col-12 img-fluid" src="images/Patrick Roy goalie.jpeg" alt="Patrick Roy making a save in ice hockey">
+            <div class="card-body text-center p-0">
+              <div class="col-12 d-flex justify-content-between align-items-center">
+                <h3 class="name card-title mb-0 text-start ps-2 pt-2 pb-1">Patrick Roy</h3>
+                <a href="#" class="chat pe-2"><i class="far fa-comment text-dark align-self-end"></i></a>
+              </div>
+              <h4 class="position card-title mb-0 text-start ps-2 pb-1">Goalie for either</h4>
+              <h4 class="location card-title mb-0 text-start ps-2 pb-1">Denver, CO</h4>
+              <h5 class="availability card-title my-3 text-center text-success ps-2 pb-1">Available to play goalie</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card bg-white rounded">
+            <img class="profile-pic col-12 img-fluid" src="images/chris osgood in net.jpeg" alt="Chris Osgood making a save in ice hockey">
+            <div class="card-body text-center p-0">
+              <div class="col-12 d-flex justify-content-between align-items-center">
+                <h3 class="name card-title mb-0 text-start ps-2 pt-2 pb-1">Chris Osgood</h3>
+                <a href="#" class="chat pe-2"><i class="far fa-comment text-dark align-self-end"></i></a>
+              </div>
+              <h4 class="position card-title mb-0 text-start ps-2 pb-1">Goalie for either</h4>
+              <h4 class="location card-title mb-0 text-start ps-2 pb-1">Detroit, MI</h4>
+              <h5 class="availability card-title my-3 text-center text-danger ps-2 pb-1">Unavailable to play goalie</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card bg-white rounded">
+            <img class="profile-pic col-12 img-fluid" src="images/Guy Lafleur photo.jpeg" alt="Guy Lafleur skating down the ice">
+            <div class="card-body text-center p-0">
+              <div class="col-12 d-flex justify-content-between align-items-center">
+                <h3 class="name card-title mb-0 text-start ps-2 pt-2 pb-1">Guy Lafleur</h3>
+                <a href="#" class="chat pe-2"><i class="far fa-comment text-dark align-self-end"></i></a>
+              </div>
+              <h4 class="position card-title mb-0 text-start ps-2 pb-1">Ice player</h4>
+              <h4 class="location card-title mb-0 text-start ps-2 pb-1">Montreal, QC</h4>
+              <h5 class="availability card-title my-3 text-center text-danger ps-2 pb-1">Looking for a goalie</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-5 mt-2">
+        <div class="col-md-6 col-lg-4">
+          <div class="card bg-white rounded">
+            <img class="profile-pic col-12 img-fluid" src="images/Patrick Roy goalie.jpeg"
+              alt="Patrick Roy making a save in ice hockey">
+            <div class="card-body text-center p-0">
+              <div class="col-12 d-flex justify-content-between align-items-center">
+                <h3 class="name card-title mb-0 text-start ps-2 pt-2 pb-1">Patrick Roy</h3>
+                <a href="#" class="chat pe-2"><i class="far fa-comment text-dark align-self-end"></i></a>
+              </div>
+              <h4 class="position card-title mb-0 text-start ps-2 pb-1">Goalie for either</h4>
+              <h4 class="location card-title mb-0 text-start ps-2 pb-1">Denver, CO</h4>
+              <h5 class="availability card-title my-3 text-center text-success ps-2 pb-1">Available to play goalie</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card bg-white rounded">
+            <img class="profile-pic col-12 img-fluid" src="images/chris osgood in net.jpeg"
+              alt="Chris Osgood making a save in ice hockey">
+            <div class="card-body text-center p-0">
+              <div class="col-12 d-flex justify-content-between align-items-center">
+                <h3 class="name card-title mb-0 text-start ps-2 pt-2 pb-1">Chris Osgood</h3>
+                <a href="#" class="chat pe-2"><i class="far fa-comment text-dark align-self-end"></i></a>
+              </div>
+              <h4 class="position card-title mb-0 text-start ps-2 pb-1">Goalie for either</h4>
+              <h4 class="location card-title mb-0 text-start ps-2 pb-1">Detroit, MI</h4>
+              <h5 class="availability card-title my-3 text-center text-danger ps-2 pb-1">Unavailable to play goalie</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card bg-white rounded">
+            <img class="profile-pic col-12 img-fluid" src="images/Guy Lafleur photo.jpeg"
+              alt="Guy Lafleur skating down the ice">
+            <div class="card-body text-center p-0">
+              <div class="col-12 d-flex justify-content-between align-items-center">
+                <h3 class="name card-title mb-0 text-start ps-2 pt-2 pb-1">Guy Lafleur</h3>
+                <a href="#" class="chat pe-2"><i class="far fa-comment text-dark align-self-end"></i></a>
+              </div>
+              <h4 class="position card-title mb-0 text-start ps-2 pb-1">Ice player</h4>
+              <h4 class="location card-title mb-0 text-start ps-2 pb-1">Montreal, QC</h4>
+              <h5 class="availability card-title my-3 text-center text-danger ps-2 pb-1">Looking for a goalie</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Chat Box-->
+  <div class="container mt-4 d-none">
+    <div class="card mx-auto" style="max-width:400px">
+      <div class="card-header dark-color">
+        <div class="navbar navbar-expand p-0">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item text-light">
+              Patrick Roy
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="fas fa-times text-light"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-body p-4 dark-color" style="height: 500px; overflow: auto">
+
+        <div class="d-flex justify-content-end">
+          <div class="text-light ps-2">
+            GL
+          </div>
+        </div>
+        <div class="d-flex align-items-baseline mb-4">
+          <div class="ps-4">
+            <div class="message card d-inline-block text-light border border-light p-2 text-end">
+              Hey Pat, we could use a goalie if you are free?
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-start">
+          <div class="text-light ps-2">
+            PR
+          </div>
+        </div>
+        <div class="d-flex align-items-baseline mb-4">
+          <div class="pe-4">
+            <div class="message card d-inline-block text-light border border-light p-2">
+              Hi Guy, I am interested! What are the details?
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="card-footer position-absolute bottom-0 m-0 p-1 col-12">
+        <form id="chat-form">
+
+          <div class="input-group">
+            <input type="text" class="dark-input form-control" placeholder="Enter Message.." aria-label="Recipient's username" aria-describedby="send-msg">
+            <button class="btn btn-outline-secondary" type="button" id="send-msg">SEND</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
