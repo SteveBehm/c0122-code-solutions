@@ -1,0 +1,22 @@
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: red;
+}
+
+i {
+  margin-left: 1rem;
+}
+
+.error-icon {
+  color: red;
+  font-size: 1.3rem;
+}
+
+.success-icon {
+  color: green;
+  font-size: 1.3rem;
+}
