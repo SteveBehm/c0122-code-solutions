@@ -2,24 +2,19 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
 function CustomButton() {
-  const [buttonTxt, setText] = useState(() => {
-    return 'Click Me!';
-  });
   const [clicked, setClick] = useState(() => {
     return false;
   });
 
   function handleClick() {
     if (clicked) {
-      setText('Click Me!');
       setClick(false);
     } else {
-      setText('Thank you!');
       setClick(true);
     }
   }
   return (
-    <button onClick={handleClick}>{buttonTxt}</button>
+    <button onClick={handleClick}>{clicked ? 'Thank you' : 'Click Me!'}</button>
   );
 }
 
