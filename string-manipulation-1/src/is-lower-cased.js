@@ -8,9 +8,15 @@ If yes, repeat character comparison until there are no more characters after the
 if there are no more characters and all have the same lowercase casing version of themselves return true
 display true
 */
-function isLowerCased(word) {
-  if (word === word.toLowerCase()) {
-    return true;
-  }
-  return false;
+// function isLowerCased(word) {
+//   if (word === word.toLowerCase()) {
+//     return true;
+//   }
+//   return false;
+// }
+
+function isLowerCased(string) {
+  const lowercase = string.toLowerCase();
+
+  return string === lowercase;
 }

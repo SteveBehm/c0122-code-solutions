@@ -8,9 +8,16 @@ If yes, repeat character comparison until there are no more characters after the
 if there are no more characters and all are the same as the capitalized version of themselves return true
 display true
 */
-function isUpperCased(word) {
-  if (word === word.toUpperCase()) {
-    return true;
-  }
-  return false;
+// function isUpperCased(word) {
+//   if (word === word.toUpperCase()) {
+//     return true;
+//   }
+//   return false;
+// }
+
+function isUpperCased(string) {
+  const original = string;
+  const upperCased = string.toUpperCase();
+
+  return original === upperCased;
 }

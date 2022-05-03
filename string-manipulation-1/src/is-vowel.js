@@ -10,10 +10,20 @@ return true and display true
 if the character doesn't match any of the members of the group
 return false and display false
 */
+// function isVowel(char) {
+//   var vowels = ['a', 'e', 'i', 'o', 'u'];
+//   for (var i = 0; i < vowels.length; i++) {
+//     if (vowels[i] === char || vowels[i].toUpperCase() === char) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+
 function isVowel(char) {
-  var vowels = ['a', 'e', 'i', 'o', 'u'];
-  for (var i = 0; i < vowels.length; i++) {
-    if (vowels[i] === char || vowels[i].toUpperCase() === char) {
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  for (let i = 0; i < vowels.length; i++) {
+    if (vowels[i] === char.toLowerCase()) {
       return true;
     }
   }
