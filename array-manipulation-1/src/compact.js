@@ -11,12 +11,22 @@ move on to the next member and repeat
 when there is no member after the current member
 display the storage container
 */
+// function compact(array) {
+//   var truthy = [];
+//   for (var i = 0; i < array.length; i++) {
+//     if (!array[i] === false) {
+//       truthy.push(array[i]);
+//     }
+//   }
+//   return truthy;
+// }
+
 function compact(array) {
-  var truthy = [];
-  for (var i = 0; i < array.length; i++) {
-    if (!array[i] === false) {
-      truthy.push(array[i]);
+  const outputArr = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i]) {
+      outputArr.push(array[i]);
     }
   }
-  return truthy;
+  return outputArr;
 }
