@@ -9,6 +9,10 @@ repeat this process until there is not another character after the current chara
 display the last character to be put in the output storage container
 */
 
+// function getLastChar(string) {
+//   return string.charAt([string.length - 1]);
+// }
+
 function getLastChar(string) {
-  return string.charAt([string.length - 1]);
+  return string[string.length - 1];
 }

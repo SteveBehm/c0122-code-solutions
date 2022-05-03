@@ -12,20 +12,26 @@ then clear the current word
 add final word to the list of words
 display the list of words
 */
+// function getWords(string) {
+//   var listOfWords = [];
+//   var currentWord = '';
+//   if (string === '') {
+//     return [];
+//   }
+//   for (var i = 0; i < string.length; i++) {
+//     if (string[i] !== ' ') {
+//       currentWord += string[i];
+//     } else {
+//       listOfWords.push(currentWord);
+//       currentWord = '';
+//     }
+//   }
+//   listOfWords.push(currentWord);
+//   return listOfWords;
+// }
+
 function getWords(string) {
-  var listOfWords = [];
-  var currentWord = '';
-  if (string === '') {
-    return [];
-  }
-  for (var i = 0; i < string.length; i++) {
-    if (string[i] !== ' ') {
-      currentWord += string[i];
-    } else {
-      listOfWords.push(currentWord);
-      currentWord = '';
-    }
-  }
-  listOfWords.push(currentWord);
-  return listOfWords;
+  if (string === '') return [];
+  const outputArr = string.split(' ');
+  return outputArr;
 }
