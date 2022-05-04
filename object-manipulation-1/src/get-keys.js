@@ -8,10 +8,18 @@ go to the next member in the group and repeat
 stop when there is no member after the current member
 display the storage container
 */
+// function getKeys(object) {
+//   var keysArray = [];
+//   for (var keys in object) {
+//     keysArray.push(keys);
+//   }
+//   return keysArray;
+// }
+
 function getKeys(object) {
-  var keysArray = [];
-  for (var keys in object) {
-    keysArray.push(keys);
+  const keysArr = [];
+  for (const key in object) {
+    keysArr.push(key);
   }
-  return keysArray;
+  return keysArr;
 }
