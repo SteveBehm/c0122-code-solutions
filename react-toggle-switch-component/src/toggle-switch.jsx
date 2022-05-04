@@ -3,11 +3,7 @@ import React, { useState } from 'react';
 const ToggleSwitch = () => {
   const [isClicked, setClick] = useState(false);
   const handleClick = () => {
-    if (isClicked) {
-      setClick(false);
-    } else {
-      setClick(true);
-    }
+    setClick(isClicked => !isClicked);
   };
   return (
     <div className='parent-div'>
