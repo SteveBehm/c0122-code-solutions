@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 
 const HotButton = () => {
-  const [clickCount, setCount] = useState(() => {
-    return 0;
-  });
+  const [clickCount, setCount] = useState(0);
 
   function incrementCount() {
     setCount(prevCount => prevCount + 1);
