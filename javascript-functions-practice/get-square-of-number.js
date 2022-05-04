@@ -1,5 +1,7 @@
 /* exported getSquareOfNumber */
-function getSquareOfNumber(number) {
-  var squaredNum = number * number;
-  return squaredNum;
-}
+// function getSquareOfNumber(number) {
+//   var squaredNum = number * number;
+//   return squaredNum;
+// }
+
+let getSquareOfNumber = number => number * number;

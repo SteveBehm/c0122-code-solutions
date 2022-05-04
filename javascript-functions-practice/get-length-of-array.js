@@ -1,5 +1,7 @@
 /* exported getLengthOfArray */
-function getLengthOfArray(array) {
-  var arrLength = array.length;
-  return arrLength;
-}
+// function getLengthOfArray(array) {
+//   var arrLength = array.length;
+//   return arrLength;
+// }
+
+let getLengthOfArray = array => array.length;
