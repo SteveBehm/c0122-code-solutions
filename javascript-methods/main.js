@@ -1,22 +1,20 @@
-var num1 = 12;
-var num2 = 14;
-var num3 = 67;
+const num1 = 12;
+const num2 = 14;
+const num3 = 67;
 
-var maximumValue = Math.max(num1, num2, num3);
-console.log('maximumValue:', maximumValue);
+const maxVal = Math.max(num1, num2, num3);
+console.log('maximumValue:', maxVal);
 
-var heroes = ['Dr. Strange', 'Batman', 'Superman', 'Deadpool'];
-var randomNumber = Math.random();
-
+const heroes = ['Dr. Strange', 'Batman', 'Superman', 'Deadpool'];
+let randomNumber = Math.random();
 randomNumber *= heroes.length;
-
-var randomIndex = Math.floor(randomNumber);
+const randomIndex = Math.floor(randomNumber);
 console.log('randomIndex:', randomIndex);
 
-var randomHero = heroes[randomIndex];
+const randomHero = heroes[randomIndex];
 console.log('randomHero:', randomHero);
 
-var library = [
+const library = [
   {
     title: 'Blink',
     author: 'Malcolm Gladwell'
@@ -31,16 +29,18 @@ var library = [
   }
 ];
 
-var lastBook = library.pop();
+const lastBook = library.pop();
 console.log('lastBook:', lastBook);
-var firstBook = library.shift();
+
+const firstBook = library.shift();
 console.log('firstBook:', firstBook);
 
-var js = {
+const js = {
   title: 'Javascript for Impatient Programmers',
   author: 'Dr. Axel Rauschmayer'
 };
-var css = {
+
+const css = {
   title: 'CSS Secrets',
   author: 'Lea Verou'
 };
