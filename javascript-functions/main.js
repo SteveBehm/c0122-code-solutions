@@ -1,3 +1,4 @@
+
 function convertMinutesToSeconds(minutes) {
   var seconds = minutes * 60;
   return seconds;
