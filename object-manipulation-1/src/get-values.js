@@ -7,10 +7,18 @@ go to the next member and repeat
 stop when there is not another member after the current one
 display the storage container
 */
+// function getValues(object) {
+//   var arrValues = [];
+//   for (var keys in object) {
+//     arrValues.push(object[keys]);
+//   }
+//   return arrValues;
+// }
+
 function getValues(object) {
-  var arrValues = [];
-  for (var keys in object) {
-    arrValues.push(object[keys]);
+  const valuesArr = [];
+  for (const key in object) {
+    valuesArr.push(object[key]);
   }
-  return arrValues;
+  return valuesArr;
 }
