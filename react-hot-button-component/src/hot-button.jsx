@@ -1,10 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function HotButton() {
+const HotButton = () => {
+  const [clickCount, setCount] = useState(() => {
+    return 0;
+  });
+
+  function incrementCount() {
+    setCount(prevCount => prevCount + 1);
+  }
+
+  let temp;
+  if (clickCount < 3) {
+    temp = 'cold';
+  } else if (clickCount < 6) {
+    temp = 'cool';
+  } else if (clickCount < 9) {
+    temp = 'luke-warm';
+  } else if (clickCount < 12) {
+    temp = 'warm';
+  } else if (clickCount < 15) {
+    temp = 'hot';
+  } else if (clickCount < 18) {
+    temp = 'hottest';
+  }
   return (
-    <button>Click Me!</button>
+    <button className={temp} onClick={incrementCount}>Hot Button</button>
   );
-}
+};
 
 export default HotButton;
 // export class HotButton extends React.Component {

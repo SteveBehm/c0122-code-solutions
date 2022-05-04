@@ -4,32 +4,40 @@ button {
   padding: 10px 20px;
 }
 
-.dark-purple {
+button:hover {
+  cursor: pointer;
+}
+
+button:focus {
+  color: aquamarine;
+}
+
+.cold {
   background-color: rebeccapurple;
   color: white;
 }
 
-.light-purple {
+.cool {
   background-color: purple;
   color: white;
 }
 
-.red {
+.luke-warm {
   background-color: red;
   color: white;
 }
 
-.orange {
+.warm {
   background-color: orange;
   color: black;
 }
 
-.yellow {
+.hot {
   background-color: yellow;
   color: black;
 }
 
-.white {
+.hottest {
   background-color: white;
   color: black;
 }
