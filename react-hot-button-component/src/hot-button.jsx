@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+// HotButton component
 const HotButton = () => {
   const [clickCount, setCount] = useState(0);
 
