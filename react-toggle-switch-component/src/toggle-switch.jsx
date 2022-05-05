@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+// ToggleSwitch component
 const ToggleSwitch = () => {
   const [isClicked, setClick] = useState(false);
   const handleClick = () => {
