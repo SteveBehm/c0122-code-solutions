@@ -8,8 +8,13 @@ go to the next character backwards as many times as is equal to the given length
 when at the point, store all the characters visited before into the final output container
 display that container
 */
+// function lastChars(length, string) {
+//   var finalStr = '';
+//   finalStr = string.slice(-length);
+//   return finalStr;
+// }
+
 function lastChars(length, string) {
-  var finalStr = '';
-  finalStr = string.slice(-length);
+  const finalStr = string.substring(string.length - length);
   return finalStr;
 }

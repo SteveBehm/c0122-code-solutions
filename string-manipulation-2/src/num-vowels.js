@@ -10,13 +10,21 @@ add 1 to the final storage container
 when there is not another character after the current character stop
 display the final output
 */
+// function numVowels(string) {
+//   var numOfVowels = 0;
+//   var lowerCaseStr = string.toLowerCase();
+//   for (var i = 0; i < lowerCaseStr.length; i++) {
+//     if (lowerCaseStr[i] === 'a' || lowerCaseStr[i] === 'e' || lowerCaseStr[i] === 'i' || lowerCaseStr[i] === 'o' || lowerCaseStr[i] === 'u') {
+//       numOfVowels++;
+//     }
+//   }
+//   return numOfVowels;
+// }
+
 function numVowels(string) {
-  var numOfVowels = 0;
-  var lowerCaseStr = string.toLowerCase();
-  for (var i = 0; i < lowerCaseStr.length; i++) {
-    if (lowerCaseStr[i] === 'a' || lowerCaseStr[i] === 'e' || lowerCaseStr[i] === 'i' || lowerCaseStr[i] === 'o' || lowerCaseStr[i] === 'u') {
-      numOfVowels++;
-    }
-  }
-  return numOfVowels;
+  const lowerCaseStr = string.toLowerCase();
+  const lowerCaseArr = lowerCaseStr.split('');
+  const filteredArr = lowerCaseArr.filter(char => char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u');
+
+  return filteredArr.length;
 }
