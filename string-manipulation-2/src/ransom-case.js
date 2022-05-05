@@ -16,15 +16,29 @@ stop when there is no more characters after the current characrer in the lower c
 display the final output group
 
 */
+// function ransomCase(string) {
+//   var lowerCaseStr = string.toLowerCase();
+//   var newWord = '';
+//   for (var i = 0; i < lowerCaseStr.length; i++) {
+//     if (i % 2 !== 0) {
+//       newWord += lowerCaseStr.charAt(i).toUpperCase();
+//     } else {
+//       newWord += lowerCaseStr.charAt(i);
+//     }
+//   }
+//   return newWord;
+// }
+
 function ransomCase(string) {
-  var lowerCaseStr = string.toLowerCase();
-  var newWord = '';
-  for (var i = 0; i < lowerCaseStr.length; i++) {
-    if (i % 2 !== 0) {
-      newWord += lowerCaseStr.charAt(i).toUpperCase();
+  const lowerCaseStr = string.toLowerCase();
+  let outputStr = '';
+
+  for (let i = 0; i < lowerCaseStr.length; i++) {
+    if (i % 2 === 0) {
+      outputStr += lowerCaseStr[i];
     } else {
-      newWord += lowerCaseStr.charAt(i);
+      outputStr += lowerCaseStr[i].toUpperCase();
     }
   }
-  return newWord;
+  return outputStr;
 }

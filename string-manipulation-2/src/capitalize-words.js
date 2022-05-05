@@ -17,29 +17,42 @@ the characters after this character until the next space will be store in the re
 look at the container with the upper case versions of the first characters
 
 */
+// function capitalizeWords(string) {
+//   var lowerCaseStr = string.toLowerCase();
+//   var listOfWords = [];
+//   var currentWord = '';
+//   var finalString = '';
+//   for (var i = 0; i < lowerCaseStr.length; i++) {
+//     if (string[i] !== ' ') {
+//       currentWord += lowerCaseStr[i];
+//     } else {
+//       listOfWords.push(currentWord);
+//       currentWord = '';
+//     }
+//   }
+//   listOfWords.push(currentWord);
+//   for (var j = 0; j < listOfWords.length; j++) {
+//     for (var k = 0; k < listOfWords[j].length; k++) {
+//       if (k === 0) {
+//         finalString += listOfWords[j][k].toUpperCase();
+//       } else {
+//         finalString += listOfWords[j][k];
+//       }
+//     }
+//     finalString += ' ';
+//   }
+//   return finalString.slice(0, -1);
+// }
+
 function capitalizeWords(string) {
-  var lowerCaseStr = string.toLowerCase();
-  var listOfWords = [];
-  var currentWord = '';
-  var finalString = '';
-  for (var i = 0; i < lowerCaseStr.length; i++) {
-    if (string[i] !== ' ') {
-      currentWord += lowerCaseStr[i];
-    } else {
-      listOfWords.push(currentWord);
-      currentWord = '';
-    }
+  const lowerCaseStr = string.toLowerCase();
+  const lowerCaseArr = lowerCaseStr.split(' ');
+  const upperCaseArr = [];
+
+  for (let i = 0; i < lowerCaseArr.length; i++) {
+    const firstChar = lowerCaseArr[i][0].toUpperCase();
+    const restOfStr = lowerCaseArr[i].substring(1);
+    upperCaseArr.push(firstChar + restOfStr);
   }
-  listOfWords.push(currentWord);
-  for (var j = 0; j < listOfWords.length; j++) {
-    for (var k = 0; k < listOfWords[j].length; k++) {
-      if (k === 0) {
-        finalString += listOfWords[j][k].toUpperCase();
-      } else {
-        finalString += listOfWords[j][k];
-      }
-    }
-    finalString += ' ';
-  }
-  return finalString.slice(0, -1);
+  return upperCaseArr.join(' ');
 }

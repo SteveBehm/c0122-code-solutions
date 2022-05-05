@@ -16,16 +16,33 @@ display the final output
 
 */
 
+// function swapChars(firstIndex, secondIndex, string) {
+//   var finalStr = '';
+//   for (var i = 0; i < string.length; i++) {
+//     if (i === firstIndex) {
+//       finalStr += string[secondIndex];
+//     } else if (i === secondIndex) {
+//       finalStr += string[firstIndex];
+//     } else {
+//       finalStr += string[i];
+//     }
+//   }
+//   return finalStr;
+// }
+
 function swapChars(firstIndex, secondIndex, string) {
-  var finalStr = '';
-  for (var i = 0; i < string.length; i++) {
+  const firstInd = string[firstIndex];
+  const secondInd = string[secondIndex];
+  let outputStr = '';
+
+  for (let i = 0; i < string.length; i++) {
     if (i === firstIndex) {
-      finalStr += string[secondIndex];
+      outputStr += secondInd;
     } else if (i === secondIndex) {
-      finalStr += string[firstIndex];
+      outputStr += firstInd;
     } else {
-      finalStr += string[i];
+      outputStr += string[i];
     }
   }
-  return finalStr;
+  return outputStr;
 }
