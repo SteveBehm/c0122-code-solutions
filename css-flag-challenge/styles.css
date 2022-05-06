@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flag {
+  height: 12rem;
+  width: 22rem;
+  background:
+    linear-gradient(
+      to right,
+      orange 0%,
+      orange calc(100% / 3),
+      white calc(100% / 3),
+      white calc(100% * 2 / 3),
+      green calc(100% * 2 / 3),
+      green 100%
+    );
+  border: 0.3rem solid lightgrey;
+}
