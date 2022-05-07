@@ -1,0 +1,11 @@
+.czech-flag {
+  width: 225px;
+  height: 150px;
+  background-image:
+    linear-gradient(35deg, blue 50%, transparent 50%),
+    linear-gradient(-35deg, transparent 50%, blue 50%),
+    linear-gradient(white 50%, red 50%);
+  background-size: 110px 75px, 110px 75px, 225px 150px;
+  background-position: 0 0, 0 74.5px, 0 0;
+  background-repeat: no-repeat, no-repeat;
+}
