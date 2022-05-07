@@ -1,11 +1,12 @@
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
 
-.flag {
+.ireland {
   height: 12rem;
   width: 22rem;
   background:
@@ -19,4 +20,22 @@ body {
       green 100%
     );
   border: 0.3rem solid lightgrey;
+  margin: 1rem;
+}
+
+.germany {
+  height: 12rem;
+  width: 22rem;
+  background:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      black calc(100% / 3),
+      red calc(100% / 3),
+      red calc(100% * 2 / 3),
+      yellow calc(100% * 2 / 3),
+      yellow 100%
+    );
+  border: 0.3rem solid lightgrey;
+  margin: 1rem;
 }
