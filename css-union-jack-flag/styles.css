@@ -1,0 +1,109 @@
+/* create the middle red vertical line in the middle of the flag */
+.union-jack {
+  width: 600px;
+  height: 300px;
+  background-image: linear-gradient(to right, white 45%, red 45%, red 55%, white 55%);
+  position: relative;
+  border: 0.3rem solid black;
+}
+
+/*
+  The horizontal line goes on top of the red vertical line
+  this means we need either side of the horiztonal line to
+  be transparent so we can see the red vertical line still.
+*/
+.horizontal-line {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 40%, red 40%, red 60%, transparent 60%);
+}
+
+/*
+  The gradient beging from the left and goes to the right
+  the 30grad sets the angle at which the colors are being
+  dsplayed
+  make sure to set position absolute so it doesn't interefere
+  with document flow.
+*/
+.left-top {
+  width: 42%;
+  height: 34%;
+  background-image:
+    linear-gradient(
+      30grad,
+      blue 30%,
+      white 30%,
+      white 35%,
+      red 35%,
+      red 44.5%,
+      white 44.5%,
+      white 60%,
+      blue 60%
+    );
+  position: absolute;
+}
+
+/*
+  this one starts from left to right and we select an angle
+  that is the opposite of te left side
+  the big difference between the top left is that we need to
+  position it appropriately
+  we can use left: 58% to slide it to the right.
+*/
+.right-top {
+  width: 42%;
+  height: 34%;
+  background-image:
+    linear-gradient(
+      170grad,
+      blue 40%,
+      white 40%,
+      white 45%,
+      red 45%,
+      red 54.5%,
+      white 54.5%,
+      white 70%,
+      blue 70%
+    );
+  position: absolute;
+  left: 58%;
+}
+
+.left-bottom {
+  width: 42%;
+  height: 34%;
+  background-image:
+    linear-gradient(
+      -30grad,
+      blue 40%,
+      white 40%,
+      white 45%,
+      red 45%,
+      red 54.5%,
+      white 54.5%,
+      white 70%,
+      blue 70%
+    );
+  position: absolute;
+  top: 66%;
+}
+
+.right-bottom {
+  width: 42%;
+  height: 34%;
+  background-image:
+    linear-gradient(
+      -170grad,
+      blue 30%,
+      white 30%,
+      white 35%,
+      red 35%,
+      red 44.5%,
+      white 44.5%,
+      white 60%,
+      blue 60%
+    );
+  position: absolute;
+  left: 58%;
+  top: 66%;
+}
