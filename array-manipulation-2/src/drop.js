@@ -11,7 +11,18 @@ do not store it in the output container
 go through every member in the group until there is not another member after the current member
 display the output storage
 */
+// function drop(array, count) {
+//   var outputArr = array.slice(count);
+//   return outputArr;
+// }
+
 function drop(array, count) {
-  var outputArr = array.slice(count);
+  const outputArr = [];
+  if (array[0] === undefined) return array;
+
+  for (let i = count; i < array.length; i++) {
+    outputArr.push(array[i]);
+  }
+
   return outputArr;
 }

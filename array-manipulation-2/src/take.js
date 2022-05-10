@@ -8,7 +8,19 @@ if it is not,
 do not place the value into the final output storage
 display the final output storage
 */
+// function take(array, count) {
+//   var outputArr = array.slice(0, count);
+//   return outputArr;
+// }
+
 function take(array, count) {
-  var outputArr = array.slice(0, count);
+  const outputArr = [];
+
+  if (array[0] === undefined) return array;
+
+  for (let i = 0; i < count; i++) {
+    outputArr.push(array[i]);
+  }
+
   return outputArr;
 }

@@ -11,10 +11,18 @@ do not store it in the final output
 stop when you come across the first member who's value you cannot store
 display final storage container
 */
+// function dropRight(array, count) {
+//   var outputArr = [];
+//   for (var i = 0; i < array.length - count; i++) {
+//     outputArr.push(array[i]);
+//   }
+//   return outputArr;
+// }
+
 function dropRight(array, count) {
-  var outputArr = [];
-  for (var i = 0; i < array.length - count; i++) {
-    outputArr.push(array[i]);
-  }
+  let outputArr = [];
+
+  outputArr = array.slice(0, array.length - count);
+
   return outputArr;
 }

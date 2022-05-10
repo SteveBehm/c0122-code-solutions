@@ -12,11 +12,48 @@ repeat the process until there are no more member after the current member
 display the final output group
 */
 
+// function chunk(array, size) {
+//   var outputArrays = [];
+//   for (var i = 0; i < array.length; i += size) {
+//     var chunk = array.slice(i, i + size);
+//     outputArrays.push(chunk);
+//   }
+//   return outputArrays;
+// }
+
+// function chunk(array, size) {
+//   if (array[0] === undefined) return array;
+//   const outputArr = [];
+//   let subArr = [];
+
+//   for (let i = 0; i < array.length; i++) {
+//     if (subArr.length === size) {
+//       outputArr.push(subArr);
+//       subArr = [];
+//     } else {
+//       subArr.push(array[i]);
+//     }
+//   }
+//   console.log(outputArr);
+//   return outputArr;
+// }
+
 function chunk(array, size) {
-  var outputArrays = [];
-  for (var i = 0; i < array.length; i += size) {
-    var chunk = array.slice(i, i + size);
-    outputArrays.push(chunk);
+  if (array.length === 0) return array;
+
+  const outputArr = [];
+  let subArr = [];
+
+  for (let i = 0; i < array.length; i++) {
+    subArr.push(array[i]);
+    if (subArr.length === size) {
+      outputArr.push(subArr);
+      subArr = [];
+    }
   }
-  return outputArrays;
+  if (subArr.length > 0) {
+    outputArr.push(subArr);
+  }
+
+  return outputArr;
 }
