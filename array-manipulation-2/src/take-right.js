@@ -13,14 +13,25 @@ continue to the next member and repeat
 repeat until there is no more members after the current member
 display the output storage container
 */
+// function takeRight(array, count) {
+//   var outputArr = [];
+//   if (count > array.length) {
+//     outputArr = array;
+//   } else {
+//     for (var i = array.length - count; i < array.length; i++) {
+//       outputArr.push(array[i]);
+//     }
+//   }
+//   return outputArr;
+// }
+
 function takeRight(array, count) {
-  var outputArr = [];
-  if (count > array.length) {
-    outputArr = array;
-  } else {
-    for (var i = array.length - count; i < array.length; i++) {
-      outputArr.push(array[i]);
-    }
+  const outputArr = [];
+  if (count > array.length) return array;
+
+  for (let i = array.length - count; i < array.length; i++) {
+    outputArr.push(array[i]);
   }
+
   return outputArr;
 }
