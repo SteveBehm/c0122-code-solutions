@@ -24,6 +24,11 @@ h3 {
   font-family: "Courier New", Courier, monospace;
 }
 
+h3:hover {
+  cursor: pointer;
+  color: fuchsia;
+}
+
 li p {
   padding: 1rem;
   border: solid black;
