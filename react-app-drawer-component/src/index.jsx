@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { MenuDrawer } from './app-drawer';
+import MenuDrawer from './app-drawer';
 
 const element = (
   <MenuDrawer />
