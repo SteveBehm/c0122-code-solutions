@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Carousel = props => {
   const [currentView, setView] = useState(1);
   const pokedex = props.pokedex;
+
+  useEffect(() => {
+    const interval = setInterval(() => arrowRight(), 3000);
+    return () => clearInterval(interval);
+  });
 
   const arrowRight = () => {
     if (currentView >= pokedex.length) {
@@ -21,7 +26,8 @@ const Carousel = props => {
   };
 
   const handleIconClick = event => {
-
+    const iconId = parseInt(event.target.id);
+    setView(iconId);
   };
   return (
     <div className="container">
