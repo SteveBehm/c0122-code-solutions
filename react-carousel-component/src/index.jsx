@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Carousel } from './carousel';
+import Carousel from './carousel';
 
 const pokedex = [
   {
