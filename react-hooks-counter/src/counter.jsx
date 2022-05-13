@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 const Counter = () => {
-  const [text, setText] = useState('Button has not been clicked');
+  const [isClicked, setClick] = useState(false);
+  const text = isClicked ? 'The button has been clicked' : 'Button has not been clicked';
   const [count, setCount] = useState(0);
 
   // passing in the second argument as an empty array literal
@@ -29,7 +30,7 @@ const Counter = () => {
       </div>
       <div className='container'>
         <button className='btn' onClick={() => {
-          setText('The button has been clicked.');
+          setClick(true);
           setCount(count + 1);
         }}>Click Me!</button>
       </div>
