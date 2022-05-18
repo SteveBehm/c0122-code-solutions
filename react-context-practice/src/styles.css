@@ -1,0 +1,43 @@
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flag {
+  width: 400px;
+  height: 200px;
+  background-color: pink;
+}
+
+.app {
+  width: 50%;
+  background-color: lightblue;
+}
+
+.middle {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.counter {
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+  align-items: center;
+}
+
+button {
+  margin: 0.5rem;
+  background-color: aqua;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: blueviolet;
+}
